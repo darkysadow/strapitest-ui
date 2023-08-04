@@ -18,4 +18,37 @@
             -webkit-text-fill-color: transparent;
         }
     }
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 15px 0 0 0;
+        &__button {
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            &_disabled {
+                background: #9C25CF;
+                background: -webkit-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                background: -moz-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                filter: grayscale(0.6);
+            }
+
+            &_active {
+                background: #9C25CF;
+                background: -webkit-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                background: -moz-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+            }
+        }
+
+        &__span {}
+    }
 }

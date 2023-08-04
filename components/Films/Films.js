@@ -8,7 +8,7 @@ const Films = ({films}) => {
                     films.data.map((film) => {
                         return(
                             <li key={film.id} className={s.films__li}>
-                                <Link href={'/'} className={s.films__li__title}>{film.attributes.title}</Link>
+                                <Link href={`/`} className={s.films__li__title}>{film.attributes.title}</Link>
                             </li>
                         )
                     })
