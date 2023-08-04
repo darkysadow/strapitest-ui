@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &__link {
+        color: #38072b;
+        transform: scale(1.0);
+        transition: transform 0.15s;
+        &:hover {
+            transform: scale(1.05);
+            transition: transform 0.15s;
+        }
+    }
+}

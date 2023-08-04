@@ -1,0 +1,21 @@
+.films {
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__li {
+        padding: 15px 0;
+
+        &__title {
+            font-size: 22px;
+            background: #9C25CF;
+            background: -webkit-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+            background: -moz-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+            background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
