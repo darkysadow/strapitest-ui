@@ -4,13 +4,15 @@ import { fetcher } from "@/lib/api"
 import s from './../styles/Films/Films.module.scss'
 import { useState } from "react";
 import useSWR from 'swr';
+import { useFetchUser } from "@/lib/authContext";
 
 const FilmsList = ({ films }) => {
     const [pageIndex, setPageIndex] = useState(1);
     const {data, error} = useSWR(`${process.env.NEXT_PUBLIC_STRAPI_URL}/films?pagination[page]=${pageIndex}&pagination[pageSize]=1`,
         fetcher, {fallbackData: films});
+    const {user, loading} = useFetchUser();
     return (
-        <Layout>
+        <Layout user={user} loading={loading}>
             <div className={s.films}>
                 {error && <>Loading error</>}
                 {data && <Films films={data} />}

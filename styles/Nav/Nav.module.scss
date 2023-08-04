@@ -2,10 +2,49 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+
+        li {
+            form {
+                input {
+                    background-color: transparent;
+                    border: 1px solid gray;
+                    padding: 3px 10px;
+                    border-radius: 10px;
+                    color: #38072b;
+                    font-size: 1em;
+                    width: 150px;
+                    transition: 0.3s ease;
+                    margin: 0 15px 0 0;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+                    &:focus {
+                        transition: 0.3s ease;
+                        background-color: #e9b5dd1f;
+                    }
+                }
+
+                button {
+                    padding: 3px 10px;
+                    font-size: 1em;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                    border-radius: 10px;
+                    background-color: #38072b;
+                }
+            }
+        }
+    }
+
     &__link {
         color: #38072b;
         transform: scale(1.0);
         transition: transform 0.15s;
+
         &:hover {
             transform: scale(1.05);
             transition: transform 0.15s;

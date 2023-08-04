@@ -1,10 +1,12 @@
 import { fetcher } from "@/lib/api";
 import Layout from "@/components/Layout";
 import s from './../../styles/film/film.module.scss';   
+import { useFetchUser } from "@/lib/authContext";
 
 const Film = ({film}) => {
+    const {user, loading} = useFetchUser()
     return (
-        <Layout>
+        <Layout user={user} loading={loading}>
             <div className={s.film}>
                 <h1>{film && film.attributes.title}</h1>
                 <div className={s.film__description}>
