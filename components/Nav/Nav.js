@@ -32,7 +32,12 @@ const Nav = () => {
                 })
             }
         )
-        setToken(responseData);
+        if(!responseData.error) {
+            setToken(responseData);
+        } else {
+            alert(responseData.error.message)
+        }
+        
     }
     const logout = () => {
         unsetToken();
