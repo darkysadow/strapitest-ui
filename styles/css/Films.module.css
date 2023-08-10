@@ -1,0 +1,57 @@
+.films__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.films__li {
+  padding: 15px 0;
+}
+.films__li__title {
+  font-size: 22px;
+  background: #9C25CF;
+  background: -webkit-gradient(linear, left top, right top, color-stop(52%, #9C25CF), to(#CF00AC));
+  background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.films__buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  margin: 15px 0 0 0;
+}
+.films__buttons__button {
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.films__buttons__button_disabled {
+  background: #9C25CF;
+  background: -webkit-gradient(linear, left top, right top, color-stop(52%, #9C25CF), to(#CF00AC));
+  background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+  -webkit-filter: grayscale(0.6);
+          filter: grayscale(0.6);
+}
+.films__buttons__button_active {
+  background: #9C25CF;
+  background: -webkit-gradient(linear, left top, right top, color-stop(52%, #9C25CF), to(#CF00AC));
+  background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+}

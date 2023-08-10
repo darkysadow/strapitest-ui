@@ -1,5 +1,6 @@
 .film {
     font-size: 1.1em;
+
     h1 {
         font-size: 2em;
         font-weight: 700;
@@ -13,6 +14,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
     h2 {
         font-size: 1em;
         color: gray;
@@ -24,7 +26,7 @@
         padding: 20px 0;
         gap: 10px;
 
-        
+
     }
 
     &__released {
@@ -36,6 +38,7 @@
             align-items: center;
             padding: 20px 0;
         }
+
         h2 {
             padding: 0 0 5px 0;
         }
@@ -45,7 +48,7 @@
         h2 {
             padding: 0 0 5px 0;
         }
-        
+
     }
 
     &__publishedAt {
@@ -54,5 +57,114 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+    }
+}
+
+.reviews {
+    padding: 50px 0 0 0;
+
+    &__h2 {
+        font-weight: 700;
+        font-size: 1.8em;
+        letter-spacing: 1.2px;
+        font-variant: small-caps;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background: #9C25CF;
+        background: -webkit-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+        background: -moz-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+        background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        border: 1px solid #9c25cf22;
+
+        textarea {
+            display: flex;
+            flex: 0 0 80%;
+            resize: none;
+            padding: 10px;
+            line-height: 1.4em;
+            font-size: 1em;
+            background: transparent;
+            color: black;
+            border: 1px solid #9c25cf33;
+            border-radius: 5px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            min-height: 10vh;
+        }
+
+        button {
+            display: flex;
+            flex: 0 0 15%;
+            max-height: 100px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background: #9C25CF;
+            background: -webkit-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+            background: -moz-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+            background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-variant: small-caps;
+            font-weight: 600;
+            font-size: 1.5em;
+        }
+    }
+
+    &__block {
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__review {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 5px;
+        width: 100%;
+        border-bottom: 0.3px solid rgba(253, 76, 226, 0.1);
+
+        &__quote {
+            display: flex;
+            flex: 0 0 80%;
+            flex-direction: column;
+            font-size: 1em;
+            line-height: 1.2em;
+
+            span {
+                font-weight: 700;
+                letter-spacing: 1.2px;
+                font-variant: small-caps;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background: #9C25CF;
+                background: -webkit-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                background: -moz-linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                background: linear-gradient(to right, #9C25CF 52%, #CF00AC 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin: 0 0 10px 0;
+            }
+        }
+
+        &__time {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            text-align: end;
+            font-size: 0.8em;
+            color: gray;
+        }
     }
 }
