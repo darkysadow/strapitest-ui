@@ -5,8 +5,9 @@ import { useFetchUser } from "@/lib/authContext";
 import { getTokenFromLocalCookie, getTokenFromServerCookie, getUserFromLocalCookie } from "@/lib/auth";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { markdownToHTML } from "@/lib/markdownToHTML";
 
-const Film = ({ jwt, film }) => {
+const Film = ({ jwt, film, plot }) => {
     const { user, loading } = useFetchUser()
     const router = useRouter()
     const [review, setReview] = useState('');
@@ -49,7 +50,7 @@ const Film = ({ jwt, film }) => {
                         <h1>{film && film.attributes.title}</h1>
                         <div className={s.film__description}>
                             <h2>Plot:</h2>
-                            {film.attributes.plot}
+                            <div dangerouslySetInnerHTML={{ __html: plot }}></div>
                         </div>
                         <div className={s.film__released__director}>
                             <div className={s.film__released}>
@@ -113,12 +114,23 @@ export async function getServerSideProps({ req, params }) {
         }
             : ''
     );
-    return {
-        props: {
+    if (filmResponse.data) {
+        const plot = await markdownToHTML(filmResponse.data.attributes.plot);
+        console.log(plot);
+        return {
+          props: {
             film: filmResponse.data,
+            plot,
             jwt: jwt ? jwt : '',
-        }
-    }
+          },
+        };
+      } else {
+        return {
+          props: {
+            error: filmResponse.error.message,
+          },
+        };
+      }
 }
 
 export default Film;
