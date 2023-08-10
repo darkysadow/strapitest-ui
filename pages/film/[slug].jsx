@@ -39,7 +39,7 @@ const Film = ({ jwt, film, plot }) => {
                 console.error('Request error', error);
             }
         }
-        
+
     }
 
     return (
@@ -50,7 +50,10 @@ const Film = ({ jwt, film, plot }) => {
                         <h1>{film && film.attributes.title}</h1>
                         <div className={s.film__description}>
                             <h2>Plot:</h2>
-                            <div dangerouslySetInnerHTML={{ __html: plot }}></div>
+                            <div 
+                                className={s.film__description__plot} 
+                                dangerouslySetInnerHTML={{ __html: plot }}
+                            ></div>
                         </div>
                         <div className={s.film__released__director}>
                             <div className={s.film__released}>
@@ -76,7 +79,7 @@ const Film = ({ jwt, film, plot }) => {
                             <h2>Reviews</h2>
                         </div>
                         <form className={s.reviews__form} onSubmit={handleSubmit}>
-                            <textarea type="text" placeholder="Type your review here" value={review} onChange={handleChange}/>
+                            <textarea type="text" placeholder="Type your review here" value={review} onChange={handleChange} />
                             <button type="submit">Send</button>
                         </form>
                         <ul className={s.reviews__block}>
@@ -115,22 +118,22 @@ export async function getServerSideProps({ req, params }) {
             : ''
     );
     if (filmResponse.data) {
-        const plot = await markdownToHTML(filmResponse.data.attributes.plot);
-        console.log(plot);
+        const markdownPlot = filmResponse.data.attributes.plot
+        const plot = await markdownToHTML(markdownPlot);
         return {
-          props: {
-            film: filmResponse.data,
-            plot,
-            jwt: jwt ? jwt : '',
-          },
+            props: {
+                film: filmResponse.data,
+                plot,
+                jwt: jwt ? jwt : '',
+            },
         };
-      } else {
+    } else {
         return {
-          props: {
-            error: filmResponse.error.message,
-          },
+            props: {
+                error: filmResponse.error.message,
+            },
         };
-      }
+    }
 }
 
 export default Film;
