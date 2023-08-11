@@ -3,11 +3,11 @@ import Layout from "@/components/Layout";
 import s from './../../styles/film/film.module.scss';
 import { useFetchUser } from "@/lib/authContext";
 import { getTokenFromLocalCookie, getTokenFromServerCookie, getUserFromLocalCookie } from "@/lib/auth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { markdownToHTML } from "@/lib/markdownToHTML";
 
-const Film = ({ jwt, film, plot }) => {
+const Film = ({ jwt, film, plot, error }) => {
     const { user, loading } = useFetchUser()
     const router = useRouter()
     const [review, setReview] = useState('');
@@ -41,7 +41,13 @@ const Film = ({ jwt, film, plot }) => {
         }
 
     }
-
+    if (error) {
+        return (
+            <Layout>
+                <div style={{textAlign: 'center', width: '100%'}}>{error}</div>
+            </Layout>
+        )
+    }
     return (
         <Layout user={user} loading={loading}>
             <>
