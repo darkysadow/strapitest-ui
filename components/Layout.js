@@ -2,6 +2,7 @@ import Nav from "./Nav/Nav"
 import s from './../styles/Layout.module.scss'
 import Link from "next/link";
 import { UserProvider } from "@/lib/authContext";
+import Preloader from "./Preloader/Preloader";
 
 const Layout = ({ user, loading = false, children }) => {
     return (
@@ -18,7 +19,8 @@ const Layout = ({ user, loading = false, children }) => {
                 <main className={s.layout__main}>
                     <div className="container">
                         <div className={s.layout__main__wrapper}>
-                            <div className={s.layout__main__block}>{children}</div>
+                            {loading ? <Preloader /> : <div className={s.layout__main__block}>{children}</div>}
+                            
                         </div>
                     </div>
                 </main>
